@@ -94,11 +94,3 @@ If you encounter this error when trying to upload a file, it means your server i
 
 - **Fix 1 (Backend):** Ensure your Flask route in `app.py` explicitly allows POST requests: `@app.route('/', methods=['GET', 'POST'])`.
 - **Fix 2 (Frontend):** Ensure your HTML form in `index.html` includes the method attribute: `<form method="POST" enctype="multipart/form-data">`.
-
-## 🔮 Future Improvements
-
-This is a functional prototype. For a production-grade enterprise application, the following improvements are recommended:
-
-- **Advanced NLP Integration:** Replace the basic regex heuristics with a powerful Natural Language Processing library like `spaCy` or an LLM API for highly accurate entity extraction.
-- **Database Support:** Add a database (e.g., PostgreSQL or SQLite) to store uploaded resumes and parsed JSON for later retrieval.
-- **File Validation:** Add stricter security checks to ensure uploaded files are safe and are definitively PDFs before processing.
