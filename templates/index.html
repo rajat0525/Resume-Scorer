@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Scorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Resume points Scorer</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" accept=".pdf" required>
+        <button type="submit">Upload Resume</button>
+    </form>
+
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+
+    {% if result %}
+        <h2>Score: {{ result.percentage }}%</h2>
+        <h3>Matched fields</h3>
+        <ul>
+            {% for field in result.matched %}
+                <li>{{ field }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Missing fields</h3>
+        <ul>
+            {% for field in result.missing %}
+                <li>{{ field }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Upload a PDF resume to see your score.</p>
+    {% endif %}
+</body>
+</html>
