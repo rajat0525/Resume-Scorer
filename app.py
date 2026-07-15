@@ -27,11 +27,7 @@ def extract_text_from_pdf(file_stream):
     return text
 
 def parse_resume_to_json(text):
-    """
-    Simulates parsing a resume into JSON using basic heuristics.
-    For a production backend environment, you would replace this with 
-    a robust NLP pipeline (e.g., spaCy) or an LLM API.
-    """
+    
     parsed_data = {}
     text_lower = text.lower()
 
